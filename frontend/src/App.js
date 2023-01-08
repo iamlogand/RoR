@@ -2,6 +2,7 @@ import { Component } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.js";
 import JoinGame from "./pages/JoinGame.js";
+import Game from "./pages/GamePage.js";
 import RegisterPage from "./pages/RegisterPage.js";
 import SignInPage from "./pages/SignInPage.js";
 import SignOutPage from "./pages/SignOutPage.js";
@@ -62,6 +63,9 @@ class App extends Component {
               accessToken={this.state.accessToken}
               refreshToken={this.state.refreshToken}
               setAuthData={this.setAuthData} />} />
+
+          <Route path="game" element={
+            <Game username={this.state.username} />} />
 
           {/* `auth` maps to pages relating to user accounts */}
           <Route path="auth">
